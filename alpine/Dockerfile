@@ -14,6 +14,7 @@ ENV PATH "${PATH}:/opt/ts3server"
 ARG TEAMSPEAK_CHECKSUM=f30a5366f12b0c5b00476652ebc06d9b5bc4754c4cb386c086758cceb620a8d0
 ARG TEAMSPEAK_VERSION=3.13.6
 ARG TEAMSPEAK_URL=https://files.teamspeak-services.com/releases/server/${TEAMSPEAK_VERSION}/teamspeak3-server_linux_alpine-${TEAMSPEAK_VERSION}.tar.bz2
+ARG TIMEZONE=Europe/Warsaw
 
 RUN set -eux; \
     apk add --no-cache --virtual .fetch-deps tar; \
@@ -25,6 +26,12 @@ RUN set -eux; \
     apk del .fetch-deps; \
     mv /opt/ts3server/*.so /opt/ts3server/redist/* /usr/local/lib; \
     ldconfig /usr/local/lib
+
+# install tzdata
+RUN apk add --no-cache tzdata
+
+ENV TEAMSPEAK_VERSION=${TEAMSPEAK_VERSION}
+ENV TZ=${TIMEZONE}
 
 # setup directory where user data is stored
 VOLUME /var/ts3server/
