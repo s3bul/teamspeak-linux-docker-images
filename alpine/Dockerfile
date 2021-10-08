@@ -1,4 +1,7 @@
-FROM alpine:3.14.2
+ARG IMAGE_ALPINE_NAME
+ARG IMAGE_ALPINE_VERSION
+
+FROM ${IMAGE_ALPINE_NAME}:${IMAGE_ALPINE_VERSION}
 
 RUN apk add --no-cache ca-certificates libstdc++ su-exec libpq
 RUN set -eux; \
@@ -9,7 +12,8 @@ RUN set -eux; \
 ENV PATH "${PATH}:/opt/ts3server"
 
 ARG TEAMSPEAK_CHECKSUM=f30a5366f12b0c5b00476652ebc06d9b5bc4754c4cb386c086758cceb620a8d0
-ARG TEAMSPEAK_URL=https://files.teamspeak-services.com/releases/server/3.13.6/teamspeak3-server_linux_alpine-3.13.6.tar.bz2
+ARG TEAMSPEAK_VERSION=3.13.6
+ARG TEAMSPEAK_URL=https://files.teamspeak-services.com/releases/server/${TEAMSPEAK_VERSION}/teamspeak3-server_linux_alpine-${TEAMSPEAK_VERSION}.tar.bz2
 
 RUN set -eux; \
     apk add --no-cache --virtual .fetch-deps tar; \
@@ -31,7 +35,7 @@ WORKDIR /var/ts3server/
 # 30033 file transport
 EXPOSE 9987/udp 10011 30033
 
-COPY entrypoint.sh /opt/ts3server
+COPY alpine/entrypoint.sh /opt/ts3server
 
 ENTRYPOINT [ "entrypoint.sh" ]
 CMD [ "ts3server" ]
