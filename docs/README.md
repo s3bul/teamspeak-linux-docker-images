@@ -5,7 +5,6 @@
 - [`3.13.7-6-alpine3.17`](https://github.com/s3bul/teamspeak-linux-docker-images/blob/v3.13.7-6/alpine/Dockerfile)
 - [`3.13.7-5-alpine3.18`,`3.13.7-5`](https://github.com/s3bul/teamspeak-linux-docker-images/blob/v3.13.7-5/alpine/Dockerfile)
 - [`3.13.7-5-alpine3.17`](https://github.com/s3bul/teamspeak-linux-docker-images/blob/v3.13.7-5/alpine/Dockerfile)
-- [`3.13.7-4-alpine3.17`,`3.13.7-4`](https://github.com/s3bul/teamspeak-linux-docker-images/blob/v3.13.7-4/alpine/Dockerfile)
 
 ### Official
 
