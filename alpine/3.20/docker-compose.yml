@@ -1,0 +1,17 @@
+services:
+  teamspeak:
+    build:
+      context: ../..
+      dockerfile: alpine/Dockerfile
+      args:
+        IMAGE_ALPINE_NAME: ${IMAGE_ALPINE_NAME}
+        IMAGE_ALPINE_VERSION: ${IMAGE_ALPINE_3_20_VERSION}
+        TEAMSPEAK_CHECKSUM: ${TEAMSPEAK_CHECKSUM}
+        TEAMSPEAK_VERSION: ${TEAMSPEAK_VERSION}
+        TIMEZONE: ${TIMEZONE}
+      cache_from:
+      - ${BUILD_IMAGE_NAME}:${BUILD_IMAGE_VERSION}-${BUILD_IMAGE_NUMBER}-alpine3.20-rc
+      - ${BUILD_IMAGE_NAME}:${BUILD_IMAGE_VERSION}-${BUILD_IMAGE_NUMBER}-alpine3.20-dev
+      - ${BUILD_IMAGE_NAME}:${BUILD_IMAGE_VERSION}-${BUILD_IMAGE_NUMBER}-alpine3.20-test
+      - ${BUILD_IMAGE_NAME}:${BUILD_IMAGE_VERSION}-${BUILD_IMAGE_NUMBER}-alpine3.20
+    image: ${BUILD_IMAGE_NAME}:${BUILD_IMAGE_VERSION}-${BUILD_IMAGE_NUMBER}-alpine3.20-rc
