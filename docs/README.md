@@ -1,6 +1,7 @@
 # Supported tags and respective `Dockerfile` links
 
-- [`3.13.7-7-alpine3.20`,`3.13.7-7-alpine`,`3.13.7-7`,`3.13.7`,`3.13`,`latest`](https://github.com/s3bul/teamspeak-linux-docker-images/blob/v3.13.7-7/alpine/Dockerfile)
+- [`3.13.7-8-alpine3.23`,`3.13.7-8-alpine`,`3.13.7-8`,`3.13.7`,`3.13`,`latest`](https://github.com/s3bul/teamspeak-linux-docker-images/blob/v3.13.7-8/alpine/Dockerfile)
+- [`3.13.7-7-alpine3.20`,`3.13.7-7-alpine`,`3.13.7-7`](https://github.com/s3bul/teamspeak-linux-docker-images/blob/v3.13.7-7/alpine/Dockerfile)
 - [`3.13.7-7-alpine3.19`,`3.13.7-6-alpine3.19`,`3.13.7-6-alpine`,`3.13.7-6`](https://github.com/s3bul/teamspeak-linux-docker-images/blob/v3.13.7-7/alpine/Dockerfile)
 - [`3.13.7-7-alpine3.18`,`3.13.7-6-alpine3.18`](https://github.com/s3bul/teamspeak-linux-docker-images/blob/v3.13.7-7/alpine/Dockerfile)
 - [`3.13.7-6-alpine3.17`](https://github.com/s3bul/teamspeak-linux-docker-images/blob/v3.13.7-6/alpine/Dockerfile)
